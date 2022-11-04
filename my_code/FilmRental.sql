@@ -14,7 +14,7 @@ SELECT * FROM old_HDD;
 ## 1-Top 3 clientes, después de ordenar el numero de peliculas que ha alquilado agrupado por id_cliente
 
 SELECT customer_id, count(f.title)
-from rental as R
+from rental as r
 inner join inventory as i
 on r.inventory_id = i.inventory_id
 inner join film as f
@@ -40,7 +40,44 @@ on f.film_id = od.film_id
 group by f.title
 order by count(od.actor_id) desc;
 
-## 4- 
+## 4- Movies of action where Elvis Marx is on
+
+select f.title, c.name , a.full_name
+from category as c
+inner join old_HDD as od
+on c.category_id = od.category_id
+inner join actor as a
+on od.actor_id = a.actor_id
+inner join inventory as i
+on od.film_id = i.film_id
+inner join film as f
+on i.film_id = f.film_id
+where c.name = 'action' and a.full_name = 'ELVIS MARX';
+
+## 5- Ranking of best Horror movies (based on the rental rates)
+
+select f.title, c.name , f.rental_rate
+from category as c
+inner join old_HDD as od
+on c.category_id = od.category_id
+inner join inventory as i
+on od.film_id = i.film_id
+inner join film as f
+on i.film_id = f.film_id
+where c.name = 'horror'
+order by f.rental_rate desc;
+
+## 6- Peliculas de Sandra Peck que duren mas de 90min
+
+select f.title, a.full_name, f.length
+from film as f
+inner join old_HDD as od
+on f.film_id = od.film_id
+inner join actor as a
+on od.actor_id = a.actor_id
+where a.full_name = 'SANDRA PECK' and f.length > 90;
+
+
 
 
 
