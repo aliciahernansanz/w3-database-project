@@ -1,5 +1,5 @@
 create table old_HDD2
-select film_id,actor_id,od.category_id
+select od.film_id,od.actor_id,od.category_id
 from film as f
 inner join old_HDD as od
 on f.title = od.title
@@ -24,7 +24,7 @@ order by count(f.title) desc limit 3;
 
 ## 2- Ranking de Categories con más peliculas 
 
-select c.name, count(od.film_id)
+select c.name as category, count(od.film_id) as nº_of_films
 from category as c
 inner join old_HDD as od
 on c.category_id = od.category_id
@@ -76,6 +76,14 @@ on f.film_id = od.film_id
 inner join actor as a
 on od.actor_id = a.actor_id
 where a.full_name = 'SANDRA PECK' and f.length > 90;
+
+## 7- 
+
+SELECT f.length,
+	CASE WHEN f.length > 100 THEN 'LONG FILM'
+		ELSE 'SHORT FILM' END
+        AS movie_duration
+        from film as f;
 
 
 
