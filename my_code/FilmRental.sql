@@ -13,7 +13,7 @@ SELECT * FROM old_HDD;
 
 ## 1-Top 3 clientes, después de ordenar el numero de peliculas que ha alquilado agrupado por id_cliente
 
-SELECT customer_id, count(f.title)
+SELECT customer_id, count(f.title) as nº_films
 from rental as r
 inner join inventory as i
 on r.inventory_id = i.inventory_id
@@ -31,18 +31,18 @@ on c.category_id = od.category_id
 group by c.name
 order by count(od.film_id) desc;
 
-## 3- Número de actores por pelicula
+## 3- Nº de actores en 10 peliculas random  
 
-select f.title, count(od.actor_id)
+select f.title, count(od.actor_id) as nº_actors
 from film as f
 inner join old_HDD as od
 on f.film_id = od.film_id
 group by f.title
-order by count(od.actor_id) desc;
+order by rand() limit 10;
 
-## 4- Movies of action where Elvis Marx is on
+## 4- Peliculas de action en las que aparece Elvis Marx
 
-select f.title, c.name , a.full_name
+select f.title as film, c.name as category , a.full_name as actor
 from category as c
 inner join old_HDD as od
 on c.category_id = od.category_id
@@ -56,16 +56,14 @@ where c.name = 'action' and a.full_name = 'ELVIS MARX';
 
 ## 5- Ranking of best Horror movies (based on the rental rates)
 
-select f.title, c.name , f.rental_rate
-from category as c
+select distinct f.title as film, c.name as category, f.rental_rate
+from film as f
 inner join old_HDD as od
-on c.category_id = od.category_id
-inner join inventory as i
-on od.film_id = i.film_id
-inner join film as f
-on i.film_id = f.film_id
-where c.name = 'horror'
-order by f.rental_rate desc;
+on f.film_id = od.film_id
+inner join category as c
+on od.category_id = c.category_id
+where c.name = 'horror' 
+order by rental_rate desc;
 
 ## 6- Peliculas de Sandra Peck que duren mas de 90min
 
