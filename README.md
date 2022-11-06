@@ -40,16 +40,18 @@ Una vez arregladas y claras las conexiones lanzamos queries para comprobar que l
 
 ![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Pelis%20de%20accion%20en%20las%20que%20aparece%20E.png)
 
-###  
+###  5- Ranking of best Horror movies (based on the rental rates)
 
-![Image text]
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Ranking%20peliculas%20de%20horror.png)
 
-###  
+###  6- Peliculas de Sandra Peck que duren mas de 90min
 
-![Image text]
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/accion%20sandra%20mas%20de%2090min.png)
 
-###  
+###  7- Rental rates grouping
 
-![Image text]
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Rental_rates_grouping.png)
 
-###  
+###  8- Nº de peliculas por tienda de Animation y Children
+
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Nº%20de%20peliculas%20por%20tienda%20de%20Animation%20y%20Children.png)
