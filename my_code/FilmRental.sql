@@ -18,7 +18,7 @@ from rental as r
 inner join inventory as i
 on r.inventory_id = i.inventory_id
 inner join film as f
-on i.film_id=f.film_id
+on i.film_id = f.film_id
 group by customer_id
 order by count(f.title) desc limit 3;
 
@@ -77,14 +77,36 @@ inner join actor as a
 on od.actor_id = a.actor_id
 where a.full_name = 'SANDRA PECK' and f.length > 90;
 
-## 7- 
+## 7- Rental rates grouping
 
-SELECT f.length,
-	CASE WHEN f.length > 100 THEN 'LONG FILM'
-		ELSE 'SHORT FILM' END
-        AS movie_duration
-        from film as f;
+SELECT f.rental_rate,
+CASE 
+ WHEN f.rental_rate > 3.5 THEN 'high_score'
+ WHEN f.rental_rate > 2.5 THEN 'medium_score'
+ ELSE 'low_score' 
+END AS film_score
+FROM film as f;
 
+        
+## 8- Nº de peliculas por tienda de Animation y Children
+
+select i.store_id as store, c.name as category, count(f.title) as nº_films
+from film as f
+inner join old_HDD as od
+on f.film_id = od.film_id
+inner join category as c
+on od.category_id = c.category_id
+inner join inventory as i
+on f.film_id = i.film_id
+where c.name in ('animation','children')
+group by i.store_id, c.name ;
+
+
+## 9-
+
+
+
+## 10- 
 
 
 
