@@ -16,7 +16,7 @@ En SQL establecemos las relaciones netre las tablas, definimos las primary keys 
 
 
 
-![Image text](https://user-images.githubusercontent.com/aliciahernansanz/w3-database-projec/master/img/Relaciones.png)
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Relaciones.png)
 
 
 Al ver que 'actor_id' no es se puede relacionar con ninguna solo a través de 'full_name', realizamos un join para poder crear el 'actor_id' en la tabla old HDD gracias a la columna concatenada anteriormente 'full_name'. Mediante la creacion de una nueva tabla y sustituir la antigua.
