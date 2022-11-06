@@ -67,7 +67,7 @@ order by rental_rate desc;
 
 ## 6- Peliculas de Sandra Peck que duren mas de 90min
 
-select f.title, a.full_name, f.length
+select f.title as film, a.full_name as actor, f.length
 from film as f
 inner join old_HDD as od
 on f.film_id = od.film_id
@@ -83,7 +83,7 @@ CASE
  WHEN f.rental_rate > 2.5 THEN 'medium_score'
  ELSE 'low_score' 
 END AS film_score
-FROM film as f;
+FROM film as f limit 10;
 
         
 ## 8- Nº de peliculas por tienda de Animation y Children
