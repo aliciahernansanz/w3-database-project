@@ -100,12 +100,20 @@ where c.name in ('animation','children')
 group by i.store_id, c.name ;
 
 
-## 9-
+## 9- Media de duración de las películas cada categoría
 
-
+select c.name as category, avg(f.rental_duration) as avg_lenght
+from category as c
+inner join old_HDD as od
+on c.category_id = od.category_id
+inner join film as f
+on od.film_id = f.film_id
+group by c.name
+order by count(od.film_id) desc;
 
 ## 10- 
 
+select * from old_HDD;
 
 
 
