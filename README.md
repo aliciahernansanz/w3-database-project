@@ -55,3 +55,8 @@ Una vez arregladas y claras las conexiones lanzamos queries para comprobar que l
 ###  8- Nº de peliculas por tienda de Animation y Children
 
 ![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/Nº%20de%20peliculas%20por%20tienda%20de%20Animation%20y%20Children.png)
+
+###  9- Media de duracion por categoria
+
+![Image text](https://github.com/aliciahernansanz/w3-database-project/blob/main/img/media%20duracion%20por%20categoria.png)
+
